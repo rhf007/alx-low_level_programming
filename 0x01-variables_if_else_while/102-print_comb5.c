@@ -21,28 +21,28 @@ int main(void)
 				{
 					putchar(' ');
 				}
-			}
 
-			for (num3 = 48; num3 <= 58; num3++)
-			{
-				for (num4 = 48; num4 <= 59; num4++)
+				for (num3 = 48; num3 <= 58; num3++)
 				{
-					if (num4 > num3)
+					for (num4 = 48; num4 <= 59; num4++)
 					{
-						putchar(num3);
-						putchar(num4);
-
-						if (num3 != 58 || num4 != 59)
+						if (num4 > num3)
 						{
-							putchar(',');
-							putchar(' ');
+							putchar(num3);
+							putchar(num4);
+
+							if (num3 != 58 || num4 != 59)
+							{
+								putchar(',');
+								putchar(' ');
+							}
 						}
 					}
+		
 				}
 			}
 		}
 	}
-
 	putchar('\n');
 	return (0);
 }
