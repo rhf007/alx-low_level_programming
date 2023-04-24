@@ -6,14 +6,14 @@
  */
 int main(void)
 {
-	int n;
+	int num;
 
-	for (n = 48; n <= 57; n++)
+	for (num = 48; num <= 57; num++)
 	{
 		putchar(num);
 	}
 
-	for (n = 97; n <= 102; n++)
+	for (num = 97; num <= 102; num++)
 	{
 		putchar(num);
 	}
