@@ -17,7 +17,7 @@ void times_table(void)
 			{
 				_putchar(48 + product);
 			}
-			else if (product < 10 && j != 0)
+			if (product < 10 && j != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
