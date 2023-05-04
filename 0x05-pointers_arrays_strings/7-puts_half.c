@@ -7,10 +7,13 @@
 void puts_half(char *str)
 {
 	int lencount;
+
 	for (lencount = 0; str[lencount] != '\0'; lencount++)
 	{
 		;
 	}
+
+	lencount++;
 
 	for (lencount /= 2; str[lencount] != '\0'; lencount++)
 	{
