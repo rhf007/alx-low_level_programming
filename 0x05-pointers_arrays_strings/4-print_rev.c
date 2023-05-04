@@ -7,6 +7,7 @@
 void print_rev(char *s)
 {
 	int lencount = 0;
+	int rev;
 
 	while (*s != '\0')
 	{
@@ -14,13 +15,11 @@ void print_rev(char *s)
 		s++;
 	}
 
-	int rev;
-
 	s--;
 
 	for (rev = lencount; rev > 0; rev--)
 	{
-		_putchar(s);
+		_putchar(*s);
 	}
 
 	_putchar('\n');
