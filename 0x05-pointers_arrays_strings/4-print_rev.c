@@ -20,6 +20,7 @@ void print_rev(char *s)
 	for (rev = lencount; rev > 0; rev--)
 	{
 		_putchar(*s);
+		s--;
 	}
 
 	_putchar('\n');
