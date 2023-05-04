@@ -6,15 +6,12 @@
  */
 void puts_half(char *str)
 {
-	int lencount =  0;
+	int i, lencount;
 
-	while (*str != '\0')
+	for (i = 0; str[lencount] != '\0'; i++)
 	{
 		lencount++;
-		str++;
 	}
-
-	lencount++;
 
 	for (lencount /= 2; str[lencount] != '\0'; lencount++)
 	{
