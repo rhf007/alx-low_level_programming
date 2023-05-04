@@ -9,6 +9,7 @@ void puts2(char *str)
 {
 	int lencount = 0;
 	int i;
+	char *s = str;
 
 	while (*str != '\0')
 	{
@@ -19,5 +20,6 @@ void puts2(char *str)
 	for (i = 0; i <= lencount; i += 2)
 	{
 		_putchar(str[i]);
+		s[i/2] = str[i];
 	}
 }
