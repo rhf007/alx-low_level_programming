@@ -10,9 +10,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int lencount1, lencount2, totalcount, i, j;
-	char *tmp;
-	tmp = dest;
+	int lencount1, lencount2;
 
 	for (lencount1 = 0; dest[lencount1] != '\0'; lencount1++)
 	{
@@ -21,24 +19,10 @@ char *_strcat(char *dest, char *src)
 
 	lencount1++;
 
-	for (lencount2 = 0; src[lencount2] != '\0'; lencount2++)
+	for (lencount2 = 0; src[lencount2]; lencount2++)
 	{
-		;
+		dest[lencount1++] = src[lencount2];
 	}
 
-	lencount2++;
-	totalcount = lencount1 + lencount2;
-
-	for (j = lencount1; j < totalcount - lencount1; j++)
-	{
-		if (src[j] == '\0')
-		{
-			continue;
-		}
-
-		tmp[j] = src[j];
-	}
-
-	dest = tmp;
 	return (dest);
 }
