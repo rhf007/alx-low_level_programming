@@ -28,7 +28,7 @@ int my_sqrt(int n, int startnum)
 	{
 		return (startnum);
 	}
-	else
+	if (startnum * startnum > n)
 	{
 		return (-1);
 	}
