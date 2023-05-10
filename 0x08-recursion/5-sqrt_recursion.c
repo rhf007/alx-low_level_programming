@@ -28,10 +28,12 @@ int my_sqrt(int n, int startnum)
 	{
 		return (startnum);
 	}
-	if (startnum * startnum > n)
+	if (startnum * startnum < n)
+	{
+		return (my_sqrt(n, startnum + 1));
+	}
+	else
 	{
 		return (-1);
 	}
-
-	return (my_sqrt(n, startnum + 1));
 }
