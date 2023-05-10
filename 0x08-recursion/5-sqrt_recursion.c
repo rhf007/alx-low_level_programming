@@ -33,5 +33,5 @@ int my_sqrt(int n, int startnum)
 		return (-1);
 	}
 
-	return (my_sqrt, (startnum + 1));
+	return (my_sqrt(startnum + 1));
 }
