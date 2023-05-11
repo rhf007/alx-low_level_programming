@@ -1,6 +1,6 @@
 #include"main.h"
 int find_len(char *s);
-int my_palindrome(char *s, int l, int r)
+int my_palindrome(char *s, int l, int r);
 
 /**
  * is_palindrome - check if a string is palindrome
@@ -11,7 +11,7 @@ int is_palindrome(char *s)
 {
 	int len = find_len(s);
 	
-	if (*s == '')
+	if (*s == 0)
 	{
 		return (1);
 	}
