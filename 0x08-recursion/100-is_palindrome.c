@@ -10,7 +10,7 @@ int my_palindrome(char *s, int l, int r);
 int is_palindrome(char *s)
 {
 	int len = find_len(s);
-	
+
 	if (*s == 0)
 	{
 		return (1);
@@ -46,18 +46,15 @@ int find_len(char *s)
  */
 int my_palindrome(char *s, int l, int r)
 {
-	if (l < 0 || r < 0 || *s == '\0')
+	if (*(s + l) != *(s + r - 1))
 	{
 		return (0);
 	}
+
 	if (l >= r)
 	{
 		return (1);
 	}
-	if (s[l] == s[r])
-	{
-		return (my_palindrome(s, (l + 1), (r - 1)));
-	}
 
-	return (0);
+	return (my_palindrome(s, (l + 1), (r - 1)));
 }
