@@ -58,4 +58,6 @@ int my_palindrome(char *s, int l, int r)
 	{
 		return (my_palindrome(s, (l + 1), (r - 1)));
 	}
+
+	return (0);
 }
