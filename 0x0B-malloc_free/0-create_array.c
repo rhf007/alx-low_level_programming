@@ -9,7 +9,7 @@
  * Return: a pointer to the array, or NULL if size = 0 or in case of failure
  */
 char *create_array(unsigned int size, char c)
-{ 
+{
 	char *arr = malloc(sizeof(char) * size);
 	unsigned int i;
 
