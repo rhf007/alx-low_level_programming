@@ -23,5 +23,9 @@ char *create_array(unsigned int size, char c)
 		arr[i] = c;
 	}
 
+	/**
+	 * NOTE: I didn't free what I malloc'd here because I have to return it
+	 * instead, I can free it in the main program after using this function
+	 */
 	return (arr);
 }
