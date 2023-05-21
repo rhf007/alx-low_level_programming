@@ -17,7 +17,7 @@ void *malloc_checked(unsigned int b)
 	 * this is why we use mem in the if, not b
 	 */
 
-	if (b == 0)
+	if (mem == 0)
 	{
 		exit(98);
 	}
