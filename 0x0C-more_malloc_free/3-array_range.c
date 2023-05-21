@@ -4,7 +4,7 @@
 /**
  * array_range -  create an array of integers. The array created should
  * contain all the values from min (included) to max (included),
- * ordered from min to max. 
+ * ordered from min to max.
  * @min: lower bound of range
  * @max: upper bound of range
  * Return: pointer to the newly created array(SUCCESS), If min > max/malloc
