@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 	int (*op_func)(int, int), a, b;
 
-	if (argc != 4 || argv == NULL)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if ((argv[2][0] == '/' && b == 0)  || (argv[2][0] == '%' && b == 0))
+	if ((b == 0 && argv[2][0] == '/') || (b == 0 && argv[2][0] == '%'))
 	{
 		printf("Error\n");
 		exit(100);
