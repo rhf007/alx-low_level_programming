@@ -11,14 +11,13 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i, found;
+	int i;
 
 	if (array != NULL && size != 0 && cmp != NULL)
 	{
 		for (i = 0; i < size; i++)
 		{
-			found = cmp(array[i]);
-			if (found)
+			if (cmp(array[i]))
 			{
 				break;
 			}
