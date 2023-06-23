@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 	{
 		while (format[i])
 		{
-			switch(format[i])
+			switch (format[i])
 			{
 				case'c':
 					printf("%s%c", my_sprtr, va_arg(args, int));
@@ -34,9 +34,7 @@ void print_all(const char * const format, ...)
 					my_str = va_arg(args, char*);
 
 					if (my_str == NULL)
-					{
 						printf("(nil)");
-					}
 
 					printf("%s%s", my_sprtr, my_str);
 					break;
@@ -45,8 +43,7 @@ void print_all(const char * const format, ...)
 					continue;
 			}
 
-			my_sprtr = ", ";
-			i++;
+			my_sprtr = ", ", i++;
 		}
 	}
 
