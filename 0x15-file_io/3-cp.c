@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fdfro = open(argv[1], O_RDONLY);
-	fdto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fdto = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	bytesread = read(fdfro, buff, 1024);
 	byteswrite = write(fdto, buff, bytesread);
 
