@@ -5,7 +5,7 @@
  * @argc: number of arguments
  * @argv: arguments
  * Return: 0 on success
- * note, sorry for structure
+ * note, sorry for structure & permission errors
  */
 
 int main(int argc, char *argv[])
