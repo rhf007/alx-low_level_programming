@@ -1,5 +1,5 @@
 #include "main.h"
-#define PERM S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH
+
 /**
  * main - copies the content of a file to another file
  * @argc: number of arguments
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fdfro = open(argv[1], O_RDONLY);
-	fdto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERM);
+	fdto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	bytesread = read(fdfro, buff, 1024);
 	byteswrite = write(fdto, buff, bytesread);
 
