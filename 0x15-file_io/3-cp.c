@@ -28,18 +28,23 @@ int main(int argc, char *argv[])
 	if (fdto == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 	while (bytesread > 0)
+	{
+		byteswrite = write(fdto, buff, bytesread);
 		if (byteswrite != bytesread)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 		}
+		bytesread = read(fdfro, buff, 1024);
+	}
 	if (bytesread == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (close(fdfro) != -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdfro), exit(100);
-	if (close(fdto) != -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdto), exit(100);
+	fdfro = close(fdfro), fdto = close(fdto);
+	if (fdfro)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdfro), exit(100);
+	if (fdto)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdfro), exit(100);
 	return (0);
 }
