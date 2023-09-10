@@ -13,14 +13,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 
 	if (!ht || !key || !value)
-	{
 		return (0);
-	}
-
 	index = hash_djb2((unsigned char *)key) % ht->size;
 	cur = ht->array[index];
-
-	while(cur)
+	while (cur)
 	{
 		if (strcmp(cur->key, key) == 0)
 		{
@@ -28,40 +24,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			cur->value = strdup(value);
 
 			if (!cur->value)
-			{
 				return (0);
-			}
-
 			return (1);
 		}
-
 		cur = cur->next;
 	}
-
 	newnode = malloc(sizeof(hash_node_t));
-	
 	if (!newnode)
-	{
 		return (0);
-	}
-
 	newnode->key = strdup(key);
-
 	if (!newnode->key)
 	{
 		free(newnode);
 		return (0);
 	}
-
 	newnode->value = strdup(value);
-
 	if (!newnode->value)
 	{
 		free(newnode->key);
 		free(newnode);
 		return (0);
 	}
-
 	newnode->next = ht->array[index];
 	ht->array[index] = newnode;
 	return (1);
